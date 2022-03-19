@@ -1,0 +1,180 @@
+body {
+    /* background: #ffffdd; */
+    /* background: #1d1c19; */
+    background-color: #24292e;
+    color: white;
+    font-family: "Noto Sans JP", "Helvetica Neue", Arial,
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 20px;
+    /* height: 100vh; */
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+
+    #app {
+        text-align: center;
+        .section {
+            margin-top: 50px;
+        }
+        .white {
+            color: white;
+        }
+        .modal {
+            .cover {
+                background: black;
+                height: 100%;
+                left: 0;
+                opacity: 0.5;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+            .panel {
+                background-color: #262521;
+                border-radius: 10px;
+                box-shadow: 0 0 2px gray;
+                height: auto;
+                left: 50%;
+                max-width: 650px;
+                padding: 10px;
+                position: fixed;
+                text-align: center;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                z-index: 2000;
+                .message {
+                    font-size: 20px;
+                    margin-top: 20px;
+                    word-break: normal;
+                }
+                .input-wrapper {
+                    margin: 10px;
+                    .input {
+                        font-size: 17px;
+                    }
+                }
+                .footer {
+                    margin-top: 20px;
+                    text-align: right;
+                    .button {
+                        border-radius: 10px;
+                        cursor: pointer;
+                        display: inline-block;
+                        margin: 10px;
+                        padding: 10px;
+                        user-select: none;
+                    }
+                    .button:hover {
+                        background: #444444;
+                        transition: 0.2s;
+                    }
+                }
+            }
+        }
+        .intro {
+            margin-top: 30px;
+            .icon {
+                border-radius: 150px;
+            }
+            .name {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .text {
+                color: white;
+                font-size: 23px;
+                margin-top: -10px;
+            }
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            .link {
+                color: #53adff;
+                margin-left: 40px;
+                margin-top: 20px;
+                text-decoration: none;
+                a {
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: #53adff;
+                    transition: 0.5s;
+                }
+                // label {
+                //     color: white;
+                //     font-size: 20px;
+                //     font-weight: bold;
+                // }
+            }
+        }
+        .tab-area {
+            .tab-bar {
+                user-select: none;
+                .tab {
+                    background: #262521;
+                    cursor: pointer;
+                    display: inline-block;
+                    max-width: 250px;
+                    min-width: 80px;
+                    padding: 10px;
+                    width: 20%;
+                }
+                .tab-left {
+                    border-radius: 20px 0 0 20px;
+                }
+                .tab-right {
+                    border-radius: 0 20px 20px 0;
+                }
+                .activeTab {
+                    background: #415e83;
+                }
+            }
+            .tab-contents {
+                margin-top: 30px;
+                .tab-content {
+                    margin: 10px;
+                    word-break: normal;
+                }
+                color: white;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 50px;
+                .project {
+                    background: #262521;
+                    border-radius: 20px;
+                    box-shadow: 6px 6px #668ad8;
+                    margin: 10px 10px 10px 10px;
+                    padding: 30px;
+                    .title {
+                        font-size: 25px;
+                        font-weight: bold;
+                        text-align: left;
+                    }
+                    .description {
+                        margin: 15px;
+                        text-align: left;
+                    }
+                    .footer {
+                        display: flex;
+                        flex-wrap: wrap;
+                        & > * {
+                            margin: 10px;
+                        }
+                        .repository > a,
+                        .website > a {
+                            color: #415e83;
+                            margin: 10px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

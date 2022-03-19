@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home | Lafixer</title>
+        <link href="./css/style.css" rel="stylesheet" />
+        <link
+            href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+        <!-- $build:develop begin -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- $build:develop end -->
+
+        <!-- $build:production begin -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+        <!-- $build:production end -->
+    </head>
+
+    <body>
+        <div id="app">
+            <div class="modal" v-if="modal.isActive">
+                <div class="cover"></div>
+                <div class="panel">
+                    <div class="message">{{ modal.message }}</div>
+                    <div class="input-wrapper" v-if="modal.type==='input'">
+                        <input
+                            v-model="modal.input"
+                            class="input"
+                            type="input"
+                            placeholder="flag"
+                        />
+                    </div>
+                    <div class="footer">
+                        <span
+                            v-if="modal.type==='input'"
+                            class="button"
+                            @click="executeFunction"
+                        >
+                            Submit
+                        </span>
+                        <span
+                            v-if="modal.type==='info'"
+                            class="button"
+                            @click="closeModal"
+                        >
+                            Close
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <section class="intro section">
+                <img
+                    class="icon"
+                    src="./images/my_icon.png"
+                    width="20%"
+                    height="20%"
+                />
+                <p class="name">Lafixier</p>
+                <p class="text">Maybe I'm a developer.</p>
+            </section>
+            <section class="links section">
+                <span class="link">
+                    <a
+                        class="white"
+                        href="https://twitter.com/lafixier"
+                        target="_blank"
+                    >
+                        <i class="fab fa-twitter fa-3x fa-fw"></i>
+                    </a>
+                </span>
+                <span class="link">
+                    <a
+                        class="white"
+                        href="https://github.com/lafixier"
+                        target="_blank"
+                    >
+                        <i class="fab fa-github fa-3x fa-fw"></i>
+                    </a>
+                </span>
+                <span class="link">
+                    <a class="white" href="" target="_blank"></a>
+                </span>
+            </section>
+            <section class="tab-area section">
+                <div class="tab-bar">
+                    <span
+                        class="tab tab-left"
+                        v-bind:class="{ activeTab: activeTabName === 'about' }"
+                        @click="switchTab('about')"
+                    >
+                        About
+                    </span>
+                    <span
+                        class="tab"
+                        v-bind:class="{ activeTab: activeTabName === 'projects' }"
+                        @click="switchTab('projects')"
+                    >
+                        Projects
+                    </span>
+                    <span
+                        class="tab tab-right"
+                        v-bind:class="{ activeTab: activeTabName === 'links' }"
+                        @click="switchTab('links')"
+                    >
+                        Links
+                    </span>
+                    <!-- $build:develop begin -->
+                    <!-- タブテンプレート -->
+                    <!-- <span
+                        class="tab tab-right"
+                        v-bind:class="{ activeTab: activeTabName === '' }"
+                        @click="switchTab('')"
+                    >
+                    </span> -->
+                    <!-- $build:develop end -->
+                </div>
+                <div class="tab-contents">
+                    <div class="tab-content" v-if="activeTabName=='about'">
+                        Lafixierって人です。「ふぃくす」とかお好きなように呼んでください。くそアプリ制作とかCTFとかやってます。
+                    </div>
+                    <div class="tab-content" v-if="activeTabName=='projects'">
+                        <div class="project" v-for="project in projects">
+                            <div class="title">{{ project.title }}</div>
+                            <div class="description">
+                                {{ project.description }}
+                            </div>
+                            <!-- $build:develop begin -->
+                            <!-- <div class="separator"></div> -->
+                            <!-- $build:develop end -->
+                            <div class="footer">
+                                <span class="repository">
+                                    <a
+                                        v-bind:href="project.repository"
+                                        target="_blank"
+                                    >
+                                        <i
+                                            class="fab fa-github fa-2x fa-fw"
+                                        ></i>
+                                        リポジトリ
+                                    </a>
+                                </span>
+                                <span class="website">
+                                    <a
+                                        v-bind:href="project.website"
+                                        target="_blank"
+                                    >
+                                        <i class="fas fa-link fa-2x fa-fw"></i>
+                                        ウェブサイト
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" v-if="activeTabName=='links'">
+                        準備中
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+
+    <!-- $build:develop begin -->
+    <script src="./js/app.js"></script>
+    <!-- $build:develop end -->
+
+    <!-- $build:production begin -->
+    <script>
+        // $build:insert_file "./js/app.js"
+    </script>
+    <!-- $build:production end -->
+</html>

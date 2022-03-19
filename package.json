@@ -1,0 +1,15 @@
+{
+  "name": "lafixier.github.io",
+  "version": "1.0.0",
+  "description": "My website",
+  "main": "index.js",
+  "repository": "git@github.com:lafixier/lafixier.github.io.git",
+  "author": "lafixier <100778884+lafixier@users.noreply.github.com>",
+  "license": "none",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "scripts": {
+    "sass": "node-sass ./src/scss/ --output ./src/css/ --output-style compressed --watch --source-map true"
+  }
+}

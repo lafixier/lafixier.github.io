@@ -12,13 +12,13 @@
         />
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 
-        <!-- $build:develop begin -->
+        <!-- $build develop begin -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <!-- $build:develop end -->
+        <!-- $build develop end -->
 
-        <!-- $build:production begin -->
+        <!-- $build production begin -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
-        <!-- $build:production end -->
+        <!-- $build production end -->
     </head>
 
     <body>
@@ -109,7 +109,7 @@
                     >
                         Links
                     </span>
-                    <!-- $build:develop begin -->
+                    <!-- $build develop begin -->
                     <!-- タブテンプレート -->
                     <!-- <span
                         class="tab tab-right"
@@ -117,7 +117,7 @@
                         @click="switchTab('')"
                     >
                     </span> -->
-                    <!-- $build:develop end -->
+                    <!-- $build develop end -->
                 </div>
                 <div class="tab-contents">
                     <div class="tab-content" v-if="activeTabName=='about'">
@@ -129,9 +129,9 @@
                             <div class="description">
                                 {{ project.description }}
                             </div>
-                            <!-- $build:develop begin -->
+                            <!-- $build develop begin -->
                             <!-- <div class="separator"></div> -->
-                            <!-- $build:develop end -->
+                            <!-- $build develop end -->
                             <div class="footer">
                                 <span class="repository">
                                     <a
@@ -164,13 +164,13 @@
         </div>
     </body>
 
-    <!-- $build:develop begin -->
+    <!-- $build develop begin -->
     <script src="./js/app.js"></script>
-    <!-- $build:develop end -->
+    <!-- $build develop end -->
 
-    <!-- $build:production begin -->
-    <script>
-        // $build:insert_file "./js/app.js"
-    </script>
-    <!-- $build:production end -->
+    <!-- $build production begin -->
+    <!-- <script> -->
+    <!-- $build insert_file "./js/app.js" -->
+    <!-- </script> -->
+    <!-- $build production end -->
 </html>
